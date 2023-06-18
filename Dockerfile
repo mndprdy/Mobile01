@@ -6,6 +6,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get install python3.10 -y
 RUN apt-get install git -y
 RUN apt-get update -y && apt-get install -y python3-pip python3-dev libsm6 libxext6 libxrender-dev
+RUN apt-get install -y libxcb-xinerama0
 RUN apt-get install wget
 RUN apt install -y libgl1-mesa-glx
 RUN apt install unzip
@@ -26,6 +27,8 @@ RUN pip3 install -r requirements.txt
 COPY detect_3.py /root/MD
 
 RUN cat detect_3.py
+
+ENV QT_QPA_PLATFORM xcb
 
 ENTRYPOINT [ "python3" ]
 CMD ["detect_3.py", "--weights", "best.pt", "--conf", "0.5", "--source", "/root/MD/Testcases/Distraction_Mobile_Truck.mp4"]
