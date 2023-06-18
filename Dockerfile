@@ -27,5 +27,5 @@ RUN pip3 install -r requirements.txt
 
 RUN cat detect_3.py
 
-ENTRYPOINT [ "python" ]
-CMD ["python", "detect_3.py", "--weights", "best.pt", "--conf", "0.5", "--source", "/Testcases/Distraction_Mobile_Truck.mp4"]
+ENTRYPOINT [ "python3" ]
+CMD ["detect_3.py", "--weights", "best.pt", "--conf", "0.5", "--source", "/Testcases/Distraction_Mobile_Truck.mp4"]
