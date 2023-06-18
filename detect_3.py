@@ -69,7 +69,7 @@ def detect(save_img=False):
     old_img_w = old_img_h = imgsz
     old_img_b = 1
     
-    abs_path = '/home/mani/Project_5/Project_5/yolov7/'
+    abs_path = '/root/MD/'
     t0 = time.time()
     detection_made = False
     count = 0
@@ -155,6 +155,10 @@ def detect(save_img=False):
                     
                     cv2.imwrite(abs_path+save_path, im0)
                     print(f" The image with the result is saved in: {abs_path+save_path}")
+                    # Display the saved image
+                    cv2.imshow("Detected Image", im0)
+                    cv2.waitKey(0)
+                    cv2.destroyAllWindows()
                         
                 else:
                     # 'video' or 'stream'
@@ -183,6 +187,10 @@ def detect(save_img=False):
                         save_path=save_path.replace(".mp4", "")
                         print(f"Mobile Detected saving to {abs_path+save_path} ")
                         print(f' The image with the result is saved in: {abs_path+save_path_no_ext+str(count)+"_"+".jpg"}')
+                        # Display the saved image
+                        cv2.imshow("Detected Image", im0)
+                        cv2.waitKey(0)
+                        cv2.destroyAllWindows()
                         count=count+1
                             
                         if count == 10:
