@@ -24,8 +24,10 @@ RUN unzip Trial_01.zip
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-COPY detect_3.py /root/MD
 ENV QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/lib/python3.10/dist-packages/cv2/qt/plugins/platforms
+
+COPY detect_3.py /root/MD
+
 RUN cat detect_3.py
 
 ENTRYPOINT [ "python3" ]
