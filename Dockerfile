@@ -20,10 +20,10 @@ WORKDIR /root/MD
 RUN wget https://mediafirewall.s3.ap-south-1.amazonaws.com/Mani/Trial_01.zip
 RUN unzip Trial_01.zip 
 
-COPY detect_3.py /root/MD
-
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
+
+COPY detect_3.py /root/MD
 
 RUN cat detect_3.py
 
