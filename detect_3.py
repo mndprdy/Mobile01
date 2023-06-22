@@ -187,10 +187,6 @@ def detect(save_img=False):
                         save_path=save_path.replace(".mp4", "")
                         print(f"Mobile Detected saving to {abs_path+save_path} ")
                         print(f' The image with the result is saved in: {abs_path+save_path_no_ext+str(count)+"_"+".jpg"}')
-                        # Display the saved image
-                        cv2.imshow("Detected Image", im0)
-                        cv2.waitKey(0)
-                        cv2.destroyAllWindows()
                         count=count+1
                             
                         if count == 10:
