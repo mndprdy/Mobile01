@@ -10,6 +10,7 @@ RUN apt-get install -y libxcb-xinerama0 libxcb-shm0
 RUN apt-get install wget
 RUN apt install -y libgl1-mesa-glx
 RUN apt install unzip
+RUN apt-get update -y && apt-get install -y xvfb
 
 
 RUN cd /root
