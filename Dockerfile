@@ -27,6 +27,12 @@ RUN pip3 install -r requirements.txt
 
 ENV QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/lib/python3.10/dist-packages/cv2/qt/plugins/platforms
 
+# Start Xvfb in the background
+CMD Xvfb :99 -screen 0 1024x768x16 &
+
+# Set the DISPLAY environment variable to use Xvfb
+ENV DISPLAY=:99
+
 COPY detect.py /root/MD
 
 RUN cat detect.py
