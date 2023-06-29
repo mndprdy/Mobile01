@@ -26,9 +26,9 @@ RUN pip3 install -r requirements.txt
 
 ENV QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/lib/python3.10/dist-packages/cv2/qt/plugins/platforms
 
-COPY detect_3.py /root/MD
+COPY detect.py /root/MD
 
-RUN cat detect_3.py
+RUN cat detect.py
 
 ENTRYPOINT [ "python3" ]
-CMD ["detect_3.py", "--weights", "best.pt", "--conf", "0.5", "--source", "0"]
+CMD ["detect.py", "--weights", "best.pt", "--conf", "0.5", "--source", "0"]
